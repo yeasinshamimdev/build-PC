@@ -1,10 +1,16 @@
 import RootLayout from "@/components/Layouts/RootLayout"
 import FeaturedCategories from "@/components/UI/FeaturedCategories"
-import FeaturedProducts from "@/components/UI/FeaturedProducts"
 import HeroSection from "@/components/UI/Hero"
+import { Skeleton } from "antd"
+import dynamic from "next/dynamic"
 import Head from "next/head"
 
-export default function Home() {
+export default function Home({products}) {
+  const DynamicFeaturedProducts = dynamic(() => import('@/components/UI/FeaturedProducts'), {
+    loading: () => <Skeleton avatar active></Skeleton> ,
+    ssr: false
+  })
+
   return (
     <div className={'font-sans'}>
       <Head>
@@ -13,13 +19,12 @@ export default function Home() {
       </Head>
       <div className="lg:px-10">
         <HeroSection />
-        <FeaturedProducts/>
+        <DynamicFeaturedProducts products={products} />
         <FeaturedCategories/>
       </div>
     </div>
   )
 }
-
 
 
 Home.getLayout = function getLayout(page) {
@@ -28,4 +33,15 @@ Home.getLayout = function getLayout(page) {
       {page}
     </RootLayout>
   )
+}
+
+export const getServerSideProps = async() => {
+  const res = await fetch("https://pc-builder-assignment.onrender.com/products")
+  const data = await res.json()
+  
+  return {
+    props: {
+      products: data.data
+    }
+  }
 }
