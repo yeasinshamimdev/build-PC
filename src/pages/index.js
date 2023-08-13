@@ -1,4 +1,3 @@
-import RootLayout from "@/components/Layouts/RootLayout"
 import FeaturedCategories from "@/components/UI/FeaturedCategories"
 import HeroSection from "@/components/UI/Hero"
 import { Skeleton } from "antd"
@@ -26,14 +25,6 @@ export default function Home({products}) {
   )
 }
 
-
-Home.getLayout = function getLayout(page) {
-  return (
-    <RootLayout>
-      {page}
-    </RootLayout>
-  )
-}
 
 export const getServerSideProps = async() => {
   const res = await fetch("https://pc-builder-assignment.onrender.com/products")

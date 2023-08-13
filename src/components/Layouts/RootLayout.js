@@ -13,49 +13,53 @@ const RootLayout = ({children}) => {
         <Link href={'/'} className="btn bg-indigo-400 text-green-400 normal-case text-xl hidden lg:flex ml-2">
           <Image src={Logo} alt={'Logo'} width={60} height={50} />
         </Link>
-          <div className="dropdown lg:hidden">
-          <Link href='#' className='btn btn-ghost  text-white' >Home </Link>
-            <Link href='#' className='btn btn-ghost  text-white' >PC Components </Link>
+          <div className="dropdown flex lg:hidden">
+            <Link href='#' className='btn btn-ghost  text-white' >
+            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
+               </Link>
               <ul  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Processor</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Motherboard</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Power Supply Unit</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Others</Link></li>
+              <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Home</Link></li>
+                <li><Link href={'/processor'}  className="link link-hover text-white tex-xl font-sans" >Processor</Link></li>
+                <li><Link href={'/motherboard'}  className="link link-hover text-white tex-xl font-sans">Motherboard</Link></li>
+                <li><Link href={'/ram'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
+                <li><Link href={'/power-supply-unit'}  className="link link-hover text-white tex-xl font-sans">Power Supply Unit</Link></li>
+                <li><Link href={'/storage'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
+                <li><Link href={'/others'}  className="link link-hover text-white tex-xl font-sans">Others</Link></li>
               </ul>
           </div> 
         </div>
-        <div className="navbar-center">
-          <div className='hidden lg:flex gap-6'>
+        <div className="navbar-center hidden lg:flex">
+          <div className=' gap-6'>
             <Link href={'/'} className='btn btn-ghost text-white'>Home</Link>
             <div className="dropdown ">
                 <Link href='#' className='btn btn-ghost  text-white' >PC Components </Link>
               <ul  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Processor</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Motherboard</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Power Supply Unit</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
-                <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans">Others</Link></li>
+                <li><Link href={'/processor'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans" >Processor</Link></li>
+                <li><Link href={'/motherboard'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Motherboard</Link></li>
+                <li><Link href={'/ram'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">RAM</Link></li>
+                <li><Link href={'/power-supply-unit'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Power Supply Unit</Link></li>
+                <li><Link href={'/storage'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Storage Device</Link></li>
+                <li><Link href={'/others'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Others</Link></li>
               </ul>
             </div> 
           </div>
         </div>
         <div className="navbar-end pr-2">
           <div className='flex justify-center gap-4'>
-            <Link href={"/pc-builder"} className={"btn btn-primary lg:mr-10"}>PC Builder</Link>
+            <Link href={"/pc-builder"} className={"btn btn-primary lg:mr-10 btn-sm lg:btn-md mt-2 md:mt-0 "}>PC Builder</Link>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle">
                 <div className="indicator text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                  <span className="badge badge-sm indicator-item">8</span>
+                  <span className="badge badge-sm indicator-item">0</span>
                 </div>
               </label>
               <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
                 <div className="card-body">
-                  <span className="font-bold text-lg">8 Items</span>
-                  <span className="text-info">Subtotal: $999</span>
+                  <span className="font-bold text-white text-lg">0 Items</span>
+                  <span className="text-info">Subtotal: $000</span>
                   <div className="card-actions">
                     <button className="btn btn-primary btn-block">View cart</button>
                   </div>
@@ -70,14 +74,14 @@ const RootLayout = ({children}) => {
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                  <Link href={"/"} className="justify-between link link-hover">
+                  <Link href={"/"} className="justify-between text-white no-underline hover:bg-slate-600">
                     Profile
                   </Link>
                 </li>
-                <li><Link href={"/"} className="link link-hover">Settings</Link></li>
-                <li><Link href={"/"} className="link link-hover">Logout</Link></li>
+                <li><Link href={"/"} className="no-underline text-white hover:bg-slate-600">Settings</Link></li>
+                <li><Link href={"/"} className="no-underline text-white hover:bg-slate-600">Logout</Link></li>
               </ul>
-            </div>
+            </div>  
           </div>
         </div>
       </div>
@@ -110,7 +114,7 @@ const RootLayout = ({children}) => {
           <a className="link link-hover">Cookie policy</a>
         </div>
       </footer>
-        <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans'>Copyright © 2023 - All right reserved by Yeasin Shamim</p>
+        <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans text-xs lg:text-sm'>Copyright © 2023 - All right reserved by <br/>Yeasin Shamim</p>
   </div>
   );
 };

@@ -1,8 +1,8 @@
 
 const MonitorPage = () => {
   return (
-    <div>
-      <h1>This is Monitor page</h1>
+    <div >
+      <h1 className={"min-h-screen"}>This is Monitor page</h1>
     </div>
   )
 }

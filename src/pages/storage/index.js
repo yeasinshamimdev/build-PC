@@ -2,7 +2,7 @@
 const StoragePage = () => {
   return (
     <div>
-      <h1>This is Storage page</h1>
+      <h1 className={"min-h-screen"}>This is Storage page</h1>
     </div>
   )
 }

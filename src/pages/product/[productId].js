@@ -1,10 +1,9 @@
-import RootLayout from "@/components/Layouts/RootLayout";
 import { Col, Row } from "antd";
 import Image from "next/image";
 
 const ProductDetailsPage = ({product}) => {
   return (
-    <Row style={{ marginTop: "60px", marginBottom: "60px", alignItems: "center" }}>
+    <Row className={"min-h-screen"} style={{ marginTop: "60px", marginBottom: "60px", alignItems: "center" }}>
     <Col md={6} lg={12}>
       <div className={"lg:w-1/2 w-full mx-auto h-1/6 "}>
         <Image
@@ -29,14 +28,6 @@ const ProductDetailsPage = ({product}) => {
 }
 
 export default ProductDetailsPage;
-
-ProductDetailsPage.getLayout = function getLayout(page) {
-  return (
-    <RootLayout>
-      {page}
-    </RootLayout>
-  )
-}
 
 export const getServerSideProps = async(context) => {
   const {params} = context;

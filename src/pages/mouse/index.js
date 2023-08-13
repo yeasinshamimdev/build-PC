@@ -2,7 +2,7 @@
 const MousePage = () => {
   return (
     <div>
-      <h1 className={"min-h-screen"}>This is Mouse Id page</h1>
+      <h1 className={"min-h-screen"}>This is mouse page</h1>
     </div>
   )
 }

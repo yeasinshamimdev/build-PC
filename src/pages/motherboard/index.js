@@ -2,7 +2,7 @@
 const Motherboard = () => {
   return (
     <div>
-      <h1>This is Motherboard page</h1>
+      <h1 className={"min-h-screen"}>This is Motherboard page</h1>
     </div>
   )
 }

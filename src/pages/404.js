@@ -1,5 +1,4 @@
 import notFound from "@/assets/img/notFound.png";
-import RootLayout from "@/components/Layouts/RootLayout";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -37,8 +36,4 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
-
-NotFoundPage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>
-}
 

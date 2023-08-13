@@ -8,7 +8,7 @@ const ProductCard = ({product}) => {
         hoverable
         style={{ width: "auto" }}
         >
-        <Image width={100}  height={200} responsive alt="products" className="p-2 w-full"  src={product?.image} />
+        <Image width={100}  height={200} responsive alt="products" className="p-2 w-auto"  src={product?.image} />
         <p className='text-sm mt-0 mb-2'><b>Category: </b>{product?.category}</p>
         <p className='text-sm mt-0 mb-2'><b>Price: $</b>{product?.price}</p>
         <p className='text-sm mt-0 mb-2'><b>Status: </b>{product?.status}</p>
