@@ -1,24 +1,39 @@
 import { Button, Card } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const ProductCard = ({product}) => {
+  const router = useRouter();
+  console.log(product.averageRating)
+  
   return (
-      <Card
-        hoverable
-        style={{ width: "auto" }}
-        >
-        <Image width={100}  height={200} responsive alt="products" className="p-2 w-auto"  src={product?.image} />
-        <p className='text-sm mt-0 mb-2'><b>Category: </b>{product?.category}</p>
-        <p className='text-sm mt-0 mb-2'><b>Price: $</b>{product?.price}</p>
-        <p className='text-sm mt-0 mb-2'><b>Status: </b>{product?.status}</p>
-        <p className='text-sm mt-0 mb-2'><b>Rating: </b>{product?.averageRating}</p>
-        <div className="mt-8">
-          <Link href={`/product/${product?._id}`}>
-            <Button type="primary" shape="round" className={"w-full"}>More Details</Button>
-          </Link>
+    <Card
+      hoverable
+      style={{ width: "auto" }}
+      >
+      <Image width={100}  height={200} responsive alt="products" className="p-2 w-auto"  src={product?.image} />
+      <p className='text-[17px] mt-0 mb-4 font-bold'><b></b>{product?.productName}</p>
+      <p className='text-sm mt-0 mb-2'><b>Category: </b>{product?.category}</p>
+      <p className='text-sm mt-0 mb-2'><b>Price: $</b>{product?.price}</p>
+      <p className='text-sm mt-0 mb-2'><b>Status: </b>{product?.status}</p>
+      <div className="flex gap-0 items-center">
+        <p className='text-sm my-0'><b>Rating: </b>{product?.averageRating}</p>
+        <div className="rating rating-2xl rating-half flex items-center mb-1">
+          <input type="radio" name="rating-10" className="rating-hidden" />
+          <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-3" />
+          <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-3" />
+          <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-3"  />
+          <input type="radio" name="rating-10" className="bg-orange-400 mask mask-star-2 mask-half-3" />
+          <input type="radio" name="rating-10" className={`bg-orange-400 mask mask-star-2 mask-half-3`} />
         </div>
-      </Card>
+      </div>
+      <div className="mt-8">
+        <Link href={`${router?.route === '/' ? '/product': router.route}/${product?._id}`}>
+          <Button type="primary" shape="round" className={"w-full"}>More Details</Button>
+        </Link>
+      </div>
+    </Card>
   )
 }
 
