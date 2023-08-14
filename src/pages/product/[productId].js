@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 const ProductDetailsPage = ({product}) => {
-  console.log(product)
+  
   return (
     <div className={"min-h-screen"}>
       <Head>
@@ -27,7 +27,7 @@ const ProductDetailsPage = ({product}) => {
       </Col>
       <Col md={6} lg={12} className="px-4" >
         <h1 className="text-xl lg:text-3xl mt-8 lg:mt-0">{product?.productName}</h1>
-        <div className="text-sm lg:text-xl mt-4 lg:mt-0 flex">
+        <div className="text-sm lg:text-xl mt-4 lg:mt-0 flex flex-wrap">
           <p className="text-sm mr-2 bg-slate-200 px-3 rounded-full py-1">Price: <b>${product?.price}</b></p>
           <p className="text-sm mr-2 bg-slate-200 px-3 rounded-full py-1">Status: <b>{product?.status}</b></p>
           <p className="text-sm mr-2 bg-slate-200 px-3 rounded-full py-1">Category: <b>{product?.category}</b></p>
@@ -72,8 +72,8 @@ const ProductDetailsPage = ({product}) => {
           )}
         </div>
       </Col>
-    </Row>
-  </div>
+      </Row>
+    </div>
   )
 }
 
