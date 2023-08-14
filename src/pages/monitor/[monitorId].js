@@ -3,10 +3,11 @@ import Head from "next/head"
 import Image from "next/image"
 
 const SingleMonitorPage = ({product}) => {
+  
   return (
     <div className="min-h-screen">
       <Head>
-        <title>Single Monitor</title>
+        <title>{product?.productName}</title>
       </Head>
       <h1 className="text-2xl lg:text-4xl pt-8 text-center">Monitor Details</h1>
       <div className="divider mb-8 lg:mb-20 "></div> 
@@ -32,16 +33,18 @@ const SingleMonitorPage = ({product}) => {
             <p className="text-sm mr-2 bg-slate-200 px-3 rounded-full py-1">Brand: <b>{product?.keyFeatures?.brand}</b></p>
           </div>
           <h4 className="mb-6 text-xl">Key Features</h4>
-          <p className="text-[15px]"><b>RAM:</b> {product?.keyFeatures.RAM}</p>
           <p className="text-[15px]"><b>brand:</b> {product?.keyFeatures?.brand}</p>
-          <p className="text-[15px]"><b>case:</b> {product?.keyFeatures?.case}</p>
-          <p className="text-[15px]"><b>cooling:</b> {product?.keyFeatures?.cooling}</p>
-          <p className="text-[15px]"><b>graphicsCard:</b> {product?.keyFeatures?.graphicsCard}</p>
+          <p className="text-[15px]"><b>colorAccuracy:</b> {product?.keyFeatures?.colorAccuracy}</p>
+          <p className="text-[15px]"><b>displaySize:</b> {product?.keyFeatures?.displaySize}</p>
+          <p className="text-[15px]"><b>inputs:</b> {product?.keyFeatures?.inputs}</p>
           <p className="text-[15px]"><b>model:</b> {product?.keyFeatures?.model}</p>
-          <p className="text-[15px]"><b>powerSupply:</b>  {product?.keyFeatures?.powerSupply}</p>
-          <p className="text-[15px]"><b>processor:</b> {product?.keyFeatures?.processor}</p>
-          <p className="text-[15px]"><b>specification:</b> {product?.keyFeatures?.specification}</p>
-          <p className="text-[15px]"><b>storage:</b> {product?.keyFeatures?.storage}</p>
+          <p className="text-[15px]"><b>panelType:</b>  {product?.keyFeatures?.panelType}</p>
+          <p className="text-[15px]"><b>refreshRate:</b> {product?.keyFeatures?.refreshRate}</p>
+          <p className="text-[15px]"><b>resolution:</b> {product?.keyFeatures?.resolution}</p>
+          <p className="text-[15px]"><b>responseTime:</b> {product?.keyFeatures?.responseTime}</p>
+          <p className="text-[15px]"><b>standAdjustments:</b> {product?.keyFeatures?.standAdjustments}</p>
+          <p className="text-[15px]"><b>syncTechnology:</b> {product?.keyFeatures?.syncTechnology}</p>
+          <p className="text-[15px]"><b>warranty:</b> {product?.keyFeatures?.warranty}</p>
           <div className="my-8">
             <p className="text-[15px]"><b>Individual Rating:</b> {product?.individualRating}</p>
             <p className="text-[15px]"><b>Average Rating:</b> {product?.averageRating}</p>

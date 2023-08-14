@@ -21,6 +21,7 @@ const RootLayout = ({children}) => {
                </Link>
               <ul  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
               <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Home</Link></li>
+              <li><Link href={'/product'}  className="link link-hover text-white tex-xl font-sans" >Products</Link></li>
                 <li><Link href={'/processor'}  className="link link-hover text-white tex-xl font-sans" >Processor</Link></li>
                 <li><Link href={'/motherboard'}  className="link link-hover text-white tex-xl font-sans">Motherboard</Link></li>
                 <li><Link href={'/ram'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
@@ -33,6 +34,7 @@ const RootLayout = ({children}) => {
         <div className="navbar-center hidden lg:flex">
           <div className=' gap-6'>
             <Link href={'/'} className='btn btn-ghost text-white'>Home</Link>
+            <Link href={'/product'} className='btn btn-ghost text-white'>Products</Link>
             <div className="dropdown ">
                 <Link href='#' className='btn btn-ghost  text-white' >PC Components </Link>
               <ul  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">

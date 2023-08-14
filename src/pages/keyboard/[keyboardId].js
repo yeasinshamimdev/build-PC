@@ -3,7 +3,7 @@ import Head from "next/head"
 import Image from "next/image"
 
 const KeyboardPage = ({product}) => {
-  console.log(product)
+  
   return (
     <div className={"min-h-screen"}>
       <Head>

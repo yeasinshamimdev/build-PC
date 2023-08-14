@@ -10,7 +10,7 @@ const NotFoundPage = () => {
 
     setTimeout(()=>{
         router.back()
-    },3000)
+    },4000)
 
   return (
     <div style={{ textAlign: "center", background: "#f2f4f8" }}>

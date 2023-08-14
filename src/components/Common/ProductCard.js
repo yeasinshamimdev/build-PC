@@ -5,14 +5,13 @@ import { useRouter } from 'next/router';
 
 const ProductCard = ({product}) => {
   const router = useRouter();
-  console.log(product.averageRating)
   
   return (
     <Card
       hoverable
       style={{ width: "auto" }}
       >
-      <Image width={100}  height={200} responsive alt="products" className="p-2 w-auto"  src={product?.image} />
+      <Image width={100}  height={200} responsive alt="products" className="p-2 w-auto mx-auto"  src={product?.image} />
       <p className='text-[17px] mt-0 mb-4 font-bold'><b></b>{product?.productName}</p>
       <p className='text-sm mt-0 mb-2'><b>Category: </b>{product?.category}</p>
       <p className='text-sm mt-0 mb-2'><b>Price: $</b>{product?.price}</p>
