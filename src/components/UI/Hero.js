@@ -1,5 +1,5 @@
-import Banner from '@/assets/img/banner.jpg'
-import Image from 'next/image'
+import Banner from '@/assets/img/banner.jpg';
+import Image from 'next/image';
 
 const HeroSection = () => {
   return (
@@ -20,4 +20,4 @@ const HeroSection = () => {
   )
 }
 
-export default HeroSection
+export default HeroSection;

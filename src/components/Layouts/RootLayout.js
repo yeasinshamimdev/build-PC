@@ -69,7 +69,7 @@ const RootLayout = ({children}) => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <Image src={user} width={100} height={100} alt='user image' />
+                  <Image src={user} width={100} height={100} responsive alt='user image' />
                 </div>
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -114,7 +114,8 @@ const RootLayout = ({children}) => {
           <a className="link link-hover">Cookie policy</a>
         </div>
       </footer>
-        <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans text-xs lg:text-sm'>Copyright © 2023 - All right reserved by <br/>Yeasin Shamim</p>
+        <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans text-xs lg:text-sm'>
+          Copyright © 2023 - All right reserved by <br/>Yeasin Shamim</p>
   </div>
   );
 };
