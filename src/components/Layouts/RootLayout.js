@@ -43,7 +43,7 @@ const RootLayout = ({children}) => {
                 <li><Link href={'/motherboard'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Motherboard</Link></li>
                 <li><Link href={'/ram'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">RAM</Link></li>
                 <li><Link href={'/power-supply-unit'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Power Supply Unit</Link></li>
-                <li><Link href={'/storage'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
+                <li><Link href={'/storage'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Storage Device</Link></li>
                 <li><Link href={'/monitor'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Monitor</Link></li>
                 <li><Link href={'/others'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Others</Link></li>
               </ul>
@@ -99,23 +99,23 @@ const RootLayout = ({children}) => {
         </div> 
         <div className='lg:p-10 pl-10 '>
           <span className="footer-title">Services</span> 
-          <a className="link link-hover">Branding</a> 
-          <a className="link link-hover">Design</a> 
-          <a className="link link-hover">Marketing</a> 
-          <a className="link link-hover">Advertisement</a>
+          <Link href="/" className="link link-hover">Branding</Link> 
+          <Link href="/" className="link link-hover">Design</Link> 
+          <Link href="/" className="link link-hover">Marketing</Link> 
+          <Link href="/" className="link link-hover">Advertisement</Link>
         </div> 
         <div className='lg:p-10 pl-10 '>
           <span className="footer-title">Company</span> 
-          <a className="link link-hover">About us</a> 
-          <a className="link link-hover">Contact</a> 
-          <a className="link link-hover">Jobs</a> 
-          <a className="link link-hover">Press kit</a>
+          <Link href="/" className="link link-hover">About us</Link> 
+          <Link href="/" className="link link-hover">Contact</Link> 
+          <Link href="/" className="link link-hover">Jobs</Link> 
+          <Link href="/" className="link link-hover">Press kit</Link>
         </div> 
         <div className='lg:p-10 pl-10 pb-10'>
           <span className="footer-title">Legal</span> 
-          <a className="link link-hover">Terms of use</a> 
-          <a className="link link-hover">Privacy policy</a> 
-          <a className="link link-hover">Cookie policy</a>
+          <Link href="/" className="link link-hover">Terms of use</Link> 
+          <Link href="/" className="link link-hover">Privacy policy</Link> 
+          <Link href="/" className="link link-hover">Cookie policy</Link>
         </div>
       </footer>
         <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans text-xs lg:text-sm'>
@@ -123,4 +123,5 @@ const RootLayout = ({children}) => {
   </div>
   );
 };
+
 export default RootLayout;
