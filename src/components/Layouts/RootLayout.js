@@ -73,7 +73,7 @@ const RootLayout = ({children}) => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <Image src={user} width={100} height={100} responsive alt='user image' />
+                  <Image src={user} width={100} height={100} responsive="true" alt='user image' />
                 </div>
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -92,30 +92,30 @@ const RootLayout = ({children}) => {
       <div>
         {children}
       </div>
-      <footer className="footer bg-base-200 text-base-content font-sans">
+      <footer className="footer bg-base-200 text-base-content font-sans mt-8 lg:mt-32">
         <div className='lg:p-10 pl-10 pt-10'>
           <Image src={Logo} alt='Logo' width={50} height={50} />
           <p>Yeasin Shamim<br/>A Full Stack Developer</p>
         </div> 
         <div className='lg:p-10 pl-10 '>
-          <span className="footer-title">Services</span> 
-          <Link href="/" className="link link-hover">Branding</Link> 
-          <Link href="/" className="link link-hover">Design</Link> 
-          <Link href="/" className="link link-hover">Marketing</Link> 
-          <Link href="/" className="link link-hover">Advertisement</Link>
+          <span className="footer-title text-white">Services</span> 
+          <Link href="/" className="link link-hover text-white">Branding</Link> 
+          <Link href="/" className="link link-hover text-white">Design</Link> 
+          <Link href="/" className="link link-hover text-white">Marketing</Link> 
+          <Link href="/" className="link link-hover text-white">Advertisement</Link>
         </div> 
         <div className='lg:p-10 pl-10 '>
-          <span className="footer-title">Company</span> 
-          <Link href="/" className="link link-hover">About us</Link> 
-          <Link href="/" className="link link-hover">Contact</Link> 
-          <Link href="/" className="link link-hover">Jobs</Link> 
-          <Link href="/" className="link link-hover">Press kit</Link>
+          <span className="footer-title text-white">Company</span> 
+          <Link href="/" className="link link-hover text-white">About us</Link> 
+          <Link href="/" className="link link-hover text-white">Contact</Link> 
+          <Link href="/" className="link link-hover text-white">Jobs</Link> 
+          <Link href="/" className="link link-hover text-white">Press kit</Link>
         </div> 
         <div className='lg:p-10 pl-10 pb-10'>
-          <span className="footer-title">Legal</span> 
-          <Link href="/" className="link link-hover">Terms of use</Link> 
-          <Link href="/" className="link link-hover">Privacy policy</Link> 
-          <Link href="/" className="link link-hover">Cookie policy</Link>
+          <span className="footer-title text-white">Legal</span> 
+          <Link href="/" className="link link-hover text-white">Terms of use</Link> 
+          <Link href="/" className="link link-hover text-white">Privacy policy</Link> 
+          <Link href="/" className="link link-hover text-white">Cookie policy</Link>
         </div>
       </footer>
         <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans text-xs lg:text-sm'>

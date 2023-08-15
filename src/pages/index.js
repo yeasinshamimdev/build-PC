@@ -1,14 +1,9 @@
 import FeaturedCategories from "@/components/UI/FeaturedCategories"
+import FeaturedProducts from "@/components/UI/FeaturedProducts"
 import HeroSection from "@/components/UI/Hero"
-import { Skeleton } from "antd"
-import dynamic from "next/dynamic"
 import Head from "next/head"
 
 export default function Home({products}) {
-  const DynamicFeaturedProducts = dynamic(() => import('@/components/UI/FeaturedProducts'), {
-    loading: () => <Skeleton avatar active></Skeleton> ,
-    ssr: false
-  })
 
   return (
     <div className={'font-sans'}>
@@ -18,8 +13,8 @@ export default function Home({products}) {
       </Head>
       <div className="lg:px-10">
         <HeroSection />
-        <DynamicFeaturedProducts products={products} />
-        <FeaturedCategories/>
+        <FeaturedProducts products={products} />
+        <FeaturedCategories />
       </div>
     </div>
   )

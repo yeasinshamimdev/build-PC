@@ -17,7 +17,7 @@ const SingleMotherboard = ({product}) => {
       <Row style={{ marginTop: "60px", marginBottom: "60px" }}>
         <Col md={6} lg={12}>
           <div className={"lg:w-1/2 w-full mx-auto lg:pt-20"}>
-            <Image alt="Product Details" src={product?.image} width={200} height={200} responsive className={"w-full h-full pl-10 md:pl-0"} />
+            <Image alt="Product Details" src={product?.image} width={200} height={200} responsive="true" className={"w-full h-full pl-10 md:pl-0"} />
           </div>
         </Col>
         <Col md={6} lg={12} className="px-4" >
