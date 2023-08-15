@@ -13,7 +13,7 @@ export default function Home({products}) {
   return (
     <div className={'font-sans'}>
       <Head>
-        <title>{`Shamim's`} Tech </title>
+        <title>Shamim Tech </title>
         <meta property="og:title" content="Shamim's tech" key="tech" />
       </Head>
       <div className="lg:px-10">

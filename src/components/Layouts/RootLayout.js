@@ -27,6 +27,7 @@ const RootLayout = ({children}) => {
                 <li><Link href={'/ram'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
                 <li><Link href={'/power-supply-unit'}  className="link link-hover text-white tex-xl font-sans">Power Supply Unit</Link></li>
                 <li><Link href={'/storage'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
+                <li><Link href={'/monitor'}  className="link link-hover text-white tex-xl font-sans">Monitor</Link></li>
                 <li><Link href={'/others'}  className="link link-hover text-white tex-xl font-sans">Others</Link></li>
               </ul>
           </div> 
@@ -42,7 +43,8 @@ const RootLayout = ({children}) => {
                 <li><Link href={'/motherboard'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Motherboard</Link></li>
                 <li><Link href={'/ram'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">RAM</Link></li>
                 <li><Link href={'/power-supply-unit'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Power Supply Unit</Link></li>
-                <li><Link href={'/storage'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Storage Device</Link></li>
+                <li><Link href={'/storage'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
+                <li><Link href={'/monitor'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Monitor</Link></li>
                 <li><Link href={'/others'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Others</Link></li>
               </ul>
             </div> 

@@ -1,12 +1,9 @@
-import { Button, Card } from 'antd';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import RatingSection from './RatingSection';
+import { Button, Card } from 'antd'
+import Image from 'next/image'
+import Link from 'next/link'
+import RatingSection from './RatingSection'
 
-const ProductCard = ({product}) => {
-  const router = useRouter();
-  
+const OthersPageCard = ({title, product}) => {
   return (
     <Card
       hoverable
@@ -22,7 +19,7 @@ const ProductCard = ({product}) => {
         <RatingSection />
       </div>
       <div className="mt-8">
-        <Link href={`${router?.route === '/' ? '/product': router.route}/${product?._id}`}>
+        <Link href={`${title}/${product?._id}`}>
           <Button type="primary" shape="round" className={"w-full"}>More Details</Button>
         </Link>
       </div>
@@ -30,4 +27,4 @@ const ProductCard = ({product}) => {
   )
 }
 
-export default ProductCard;
+export default OthersPageCard

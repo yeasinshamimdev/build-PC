@@ -1,4 +1,4 @@
-import Head from "next/head"
+import Head from "next/head";
 
 const PowerSupplyPage = () => {
   return (
@@ -11,4 +11,15 @@ const PowerSupplyPage = () => {
   )
 }
 
-export default PowerSupplyPage
+export default PowerSupplyPage;
+
+export const getServerSideProps = async() => {
+  const res = await fetch("https://pc-builder-assignment.onrender.com/power-supply-unit")
+  const data = await res.json()
+  
+  return {
+    props: {
+      products: data.data
+    }
+  }
+}
