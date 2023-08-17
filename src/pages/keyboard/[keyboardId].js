@@ -62,7 +62,7 @@ export default KeyboardPage;
 export const getServerSideProps = async(context) => {
   const {params} = context;
 
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/keyboard/${params.keyboardId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/keyboard/${params.keyboardId}`)
   const data = await res.json()
   
   return {

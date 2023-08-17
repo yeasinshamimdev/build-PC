@@ -62,7 +62,7 @@ export default SingleMonitorPage;
 export const getServerSideProps = async(context) => {
   const {params} = context;
 
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/monitor/${params.monitorId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/monitor/${params.monitorId}`)
   const data = await res.json()
   
   return {

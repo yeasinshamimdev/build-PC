@@ -61,7 +61,7 @@ export default ProductDetailsPage;
 export const getServerSideProps = async(context) => {
   const {params} = context;
 
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/product/${params.productId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/product/${params.productId}`)
   const data = await res.json()
   
   return {

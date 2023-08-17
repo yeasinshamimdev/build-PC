@@ -22,7 +22,7 @@ export default function Home({products}) {
 
 
 export const getServerSideProps = async() => {
-  const res = await fetch("https://pc-builder-assignment.onrender.com/products")
+  const res = await fetch("https://build-pc-backend.vercel.app/products")
   const data = await res.json()
   
   return {

@@ -64,7 +64,7 @@ export default GpuPage;
 export const getServerSideProps = async(context) => {
   const {params} = context;
 
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/gpu/${params.gpuId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/gpu/${params.gpuId}`)
   const data = await res.json()
   
   return {

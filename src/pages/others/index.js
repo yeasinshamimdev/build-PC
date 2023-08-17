@@ -51,9 +51,9 @@ const OthersPage = ({products}) => {
 export default OthersPage;
 
 export const getServerSideProps = async() => {
-  const mouseData = await fetch("https://pc-builder-assignment.onrender.com/mouse").then((res) => res.json());
-  const keyboardData = await fetch("https://pc-builder-assignment.onrender.com/keyboard").then((res) => res.json());
-  const gpuData = await fetch("https://pc-builder-assignment.onrender.com/gpu").then((res) => res.json());
+  const mouseData = await fetch("https://build-pc-backend.vercel.app/mouse").then((res) => res.json());
+  const keyboardData = await fetch("https://build-pc-backend.vercel.app/keyboard").then((res) => res.json());
+  const gpuData = await fetch("https://build-pc-backend.vercel.app/gpu").then((res) => res.json());
   
   
   return {

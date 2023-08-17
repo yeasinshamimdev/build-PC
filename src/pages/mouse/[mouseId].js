@@ -59,7 +59,7 @@ export default SingleMousePage;
 export const getServerSideProps = async(context) => {
   const {params} = context;
 
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/mouse/${params.mouseId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/mouse/${params.mouseId}`)
   const data = await res.json()
   
   return {

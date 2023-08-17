@@ -59,7 +59,7 @@ export default SingleRamPage;
 
 export const getServerSideProps = async(context) => {
   const {params} = context;
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/ram/${params.ramId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/ram/${params.ramId}`)
   const data = await res.json()
   
   return {

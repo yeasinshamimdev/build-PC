@@ -1,10 +1,15 @@
 import Logo from '@/assets/img/logo.png';
-import user from '@/assets/img/user.jpeg';
+import { setOpen } from '@/redux/features/modal/modalSlice';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const RootLayout = ({children}) => {
+  let user = false;
+  const isOpen = useSelector(state => state.modal.open)
+  // console.log(isOpen)
+  const dispatch = useDispatch()
   
   return (
     <div>
@@ -14,22 +19,22 @@ const RootLayout = ({children}) => {
           <Image src={Logo} alt={'Logo'} width={60} height={50} />
         </Link>
           <div className="dropdown flex lg:hidden">
-            <Link href='#' className='btn btn-ghost  text-white' >
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </label>
-               </Link>
-              <ul  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Home</Link></li>
-              <li><Link href={'/product'}  className="link link-hover text-white tex-xl font-sans" >Products</Link></li>
-                <li><Link href={'/processor'}  className="link link-hover text-white tex-xl font-sans" >Processor</Link></li>
-                <li><Link href={'/motherboard'}  className="link link-hover text-white tex-xl font-sans">Motherboard</Link></li>
-                <li><Link href={'/ram'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
-                <li><Link href={'/power-supply-unit'}  className="link link-hover text-white tex-xl font-sans">Power Supply Unit</Link></li>
-                <li><Link href={'/storage'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
-                <li><Link href={'/monitor'}  className="link link-hover text-white tex-xl font-sans">Monitor</Link></li>
-                <li><Link href={'/others'}  className="link link-hover text-white tex-xl font-sans">Others</Link></li>
-              </ul>
+            <Link href='#' className='btn btn-ghost px-0 text-white' >
+              <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+              </label>
+            </Link>
+            <ul  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Home</Link></li>
+            <li><Link href={'/product'}  className="link link-hover text-white tex-xl font-sans" >Products</Link></li>
+              <li><Link href={'/processor'}  className="link link-hover text-white tex-xl font-sans" >Processor</Link></li>
+              <li><Link href={'/motherboard'}  className="link link-hover text-white tex-xl font-sans">Motherboard</Link></li>
+              <li><Link href={'/ram'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
+              <li><Link href={'/power-supply-unit'}  className="link link-hover text-white tex-xl font-sans">Power Supply Unit</Link></li>
+              <li><Link href={'/storage'}  className="link link-hover text-white tex-xl font-sans">Storage Device</Link></li>
+              <li><Link href={'/monitor'}  className="link link-hover text-white tex-xl font-sans">Monitor</Link></li>
+              <li><Link href={'/others'}  className="link link-hover text-white tex-xl font-sans">Others</Link></li>
+            </ul>
           </div> 
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -50,8 +55,8 @@ const RootLayout = ({children}) => {
             </div> 
           </div>
         </div>
-        <div className="navbar-end pr-2">
-          <div className='flex justify-center gap-4'>
+        <div className="navbar-end pr-2 lg:pr-6">
+          <div className='flex justify-center gap-2 lg:gap-4'>
             <Link href={"/pc-builder"} className={"btn btn-primary lg:mr-10 btn-sm lg:btn-md mt-2 md:mt-0 "}>PC Builder</Link>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -70,7 +75,8 @@ const RootLayout = ({children}) => {
                 </div>
               </div>
             </div>
-            <div className="dropdown dropdown-end">
+            {
+              user ? <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <Image src={user} width={100} height={100} responsive="true" alt='user image' />
@@ -86,6 +92,11 @@ const RootLayout = ({children}) => {
                 <li><Link href={"/"} className="no-underline text-white hover:bg-slate-600">Logout</Link></li>
               </ul>
             </div>  
+            : 
+            <button className="btn mr-3 btn-sm lg:btn-md mt-2 md:mt-0 btn-ghost px-4 py-0 bg-gradient-to-r from-indigo-500 to-blue-600 text-white hover:bg-gradient-to-l hover:from-blue-600 hover:to-indigo-500" onClick={() => dispatch(setOpen())}>
+              Login
+            </button>             
+            }
           </div>
         </div>
       </div>
@@ -118,8 +129,9 @@ const RootLayout = ({children}) => {
           <Link href="/" className="link link-hover text-white">Cookie policy</Link>
         </div>
       </footer>
-        <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans text-xs lg:text-sm'>
-          Copyright © 2023 - All right reserved by <br/>Yeasin Shamim</p>
+      <p className='bg-base-200 text-center pb-4 pt-8 text-base-content m-0 font-sans text-xs lg:text-sm'>
+        Copyright © 2023 - All right reserved by <br/>Yeasin Shamim
+      </p>
   </div>
   );
 };

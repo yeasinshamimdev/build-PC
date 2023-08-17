@@ -59,7 +59,7 @@ export default SingleProcessor;
 
 export const getServerSideProps = async(context) => {
   const {params} = context;
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/processor/${params.processorId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/processor/${params.processorId}`)
   const data = await res.json()
   
   return {

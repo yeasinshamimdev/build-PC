@@ -58,7 +58,7 @@ export default SingleStoragePage;
 
 export const getServerSideProps = async(context) => {
   const {params} = context;
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/ssd/${params.storageId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/ssd/${params.storageId}`)
   const data = await res.json()
   
   return {

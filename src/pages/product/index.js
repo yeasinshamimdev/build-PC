@@ -13,7 +13,7 @@ const Products = ({products}) => {
       <div className="p-4 lg:p-0">
         <h2 className="text-2xl lg:text-4xl mb-4 mt-16 font-semibold text-gray-900 text-center">Our all products</h2>
         <p className="text-gray-500 text-center ">Choose your favorite components parts</p>
-        <div className="lg:max-w-[1200px] mx-auto py-20">
+        <div className="lg:max-w-[1200px] mx-auto py-10 lg:py-20">
           <Row
             gutter={[48, 48]}>
               {products?.products?.map(product => (
@@ -121,16 +121,16 @@ const Products = ({products}) => {
 export default Products;
 
 export const getServerSideProps = async() => {
-  const products = await fetch("https://pc-builder-assignment.onrender.com/products").then((res)=> res.json());
-  const processors = await fetch("https://pc-builder-assignment.onrender.com/processor").then((res)=> res.json());
-  const motherboards = await fetch("https://pc-builder-assignment.onrender.com/motherboard").then((res)=> res.json());
-  const ram = await fetch("https://pc-builder-assignment.onrender.com/ram").then((res)=> res.json());
-  const gpu = await fetch("https://pc-builder-assignment.onrender.com/gpu").then((res)=> res.json());
-  const keyboard = await fetch("https://pc-builder-assignment.onrender.com/keyboard").then((res)=> res.json());
-  const monitor = await fetch("https://pc-builder-assignment.onrender.com/monitor").then((res)=> res.json());
-  const mouse = await fetch("https://pc-builder-assignment.onrender.com/mouse").then((res)=> res.json());
-  const powerSupply = await fetch("https://pc-builder-assignment.onrender.com/power-supply-unit").then((res)=> res.json());
-  const storage = await fetch("https://pc-builder-assignment.onrender.com/ssd").then((res)=> res.json());
+  const products = await fetch("https://build-pc-backend.vercel.app/products").then((res)=> res.json());
+  const processors = await fetch("https://build-pc-backend.vercel.app/processor").then((res)=> res.json());
+  const motherboards = await fetch("https://build-pc-backend.vercel.app/motherboard").then((res)=> res.json());
+  const ram = await fetch("https://build-pc-backend.vercel.app/ram").then((res)=> res.json());
+  const gpu = await fetch("https://build-pc-backend.vercel.app/gpu").then((res)=> res.json());
+  const keyboard = await fetch("https://build-pc-backend.vercel.app/keyboard").then((res)=> res.json());
+  const monitor = await fetch("https://build-pc-backend.vercel.app/monitor").then((res)=> res.json());
+  const mouse = await fetch("https://build-pc-backend.vercel.app/mouse").then((res)=> res.json());
+  const powerSupply = await fetch("https://build-pc-backend.vercel.app/power-supply-unit").then((res)=> res.json());
+  const storage = await fetch("https://build-pc-backend.vercel.app/ssd").then((res)=> res.json());
 
 
 

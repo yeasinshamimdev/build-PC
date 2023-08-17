@@ -62,7 +62,7 @@ export default SingleMotherboard;
 export const getServerSideProps = async(context) => {
   const {params} = context;
 
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/motherboard/${params.motherboardId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/motherboard/${params.motherboardId}`)
   const data = await res.json()
   
   return {

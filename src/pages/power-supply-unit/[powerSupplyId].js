@@ -58,7 +58,7 @@ export default SinglePowerSupplyPage;
 
 export const getServerSideProps = async(context) => {
   const {params} = context;
-  const res = await fetch(`https://pc-builder-assignment.onrender.com/power-supply-unit/${params.powerSupplyId}`)
+  const res = await fetch(`https://build-pc-backend.vercel.app/power-supply-unit/${params.powerSupplyId}`)
   const data = await res.json()
   
   return {
