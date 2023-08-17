@@ -1,3 +1,4 @@
+import { setSignUp } from '@/redux/features/modal/modalSlice';
 import { Button, Input } from 'antd';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,6 +24,46 @@ export default function SignUpForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid gap-2">
           <div className="grid gap-1">
+            <div className='flex items-center gap-4 mb-2'>
+              <div>
+                <level className="text-sm font-semibold" htmlFor="firstName">
+                  First Name
+                </level>
+                <Input
+                  className="p-2 font-medium "
+                  id="firstName"
+                  placeholder="John"
+                  type="text"
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  {...register("firstName", { required: "First name is required" })}
+                />
+                {errors.firstName && (
+                  <p className="text-sm mt-1 text-red-900">
+                    {errors.firstName.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <level className="text-sm font-semibold" htmlFor="lastName">
+                  Last Name
+                </level>
+                <Input
+                  className="p-2 font-medium "
+                  id="lastName"
+                  placeholder="Deo"
+                  type="text"
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  {...register("lastName", { required: "Last name is required" })}
+                />
+                {errors.lastName && (
+                  <p className="text-sm mt-1 text-red-900">
+                    {errors.lastName.message}
+                  </p>
+                )}
+              </div>
+            </div>
             <level className="text-sm font-semibold" htmlFor="email">
               Email
             </level>
@@ -68,9 +109,10 @@ export default function SignUpForm() {
         </div>
       </form>
       <div className="flex items-center">
-        <p className="text-sm ">Create a build PC account?</p>
-        <button className="ml-2 bg-white border-0 cursor-pointer text-blue-400 text-[16px] font-semibold underline">
-          sign up
+        <p className="text-sm ">Already have an account?</p>
+        <button onClick={() => dispatch(setSignUp(false))} 
+          className="ml-2 bg-white border-0 cursor-pointer text-blue-400 text-[16px] font-semibold underline">
+          Login
         </button>
       </div>
     </div>

@@ -12,7 +12,7 @@ export const modalSlice = createSlice({
       state.open = !state.open
     },
     setSignUp: (state, payload) => {
-      state.signUp = payload
+      state.signUp = payload.payload
     },
   }
 })
