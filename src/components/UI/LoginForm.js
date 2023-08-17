@@ -1,95 +1,91 @@
 "use client";
 
+import { setSignUp } from "@/redux/features/modal/modalSlice";
 import { Button, Input } from "antd";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
+import { useDispatch, useSelector } from "react-redux";
 import AuthModal from "./AuthModal";
+import SignUpForm from "./SignUpForm";
 
-export function LoginForm({ className, ...props }) {
+export default function LoginForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const isOpen = useSelector(state => state.modal.open)
+  const isSignUp = useSelector(state => state.modal.signUp)
+  // console.log(isSignUp)
+  const dispatch = useDispatch();
   
   const onSubmit = (data) => {
     console.log(data);
+    setTimeout(() => {
+      dispatch(setOpen());
+    }, 1000);
   };
 
   return (
     <AuthModal >
-      <div className={"grid gap-6"}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid gap-2">
-            <div className="grid gap-1">
-              <level className=" text-sm " htmlFor="email">
-                Email
-              </level>
-              <Input
-                className="bg-indigo-100 p-2 font-medium "
-                id="email"
-                placeholder="name@example.com"
-                type="email"
-                autoCapitalize="none"
-                autoComplete="email"
-                autoCorrect="off"
-                {...register("email", { required: "Email is required" })}
-              />
-              {errors.email && (
-                <p className="text-sm mt-1 text-red-900">
-                  {errors.email.message}
-                </p>
-              )}
-              <level className="mt-2 text-sm " htmlFor="email">
-                Password
-              </level>
-              <Input
-                className="bg-indigo-100 p-2 font-medium "
-                id="password"
-                placeholder="password"
-                minLength={6}
-                type="password"
-                autoCapitalize="none"
-                autoCorrect="off"
-                {...register("password", { required: "Password is required" })}
-              />
-              {errors.password && (
-                <p className="text-sm mt-1 text-red-900">
-                  {errors.password.message}
-                </p>
-              )}
+      {
+        isSignUp ? <SignUpForm /> :
+        <div className={"grid gap-6 mt-6"}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="grid gap-2">
+              <div className="grid gap-1">
+                <level className="text-sm font-semibold" htmlFor="email">
+                  Email
+                </level>
+                <Input
+                  className="p-2 font-medium "
+                  id="email"
+                  placeholder="name@example.com"
+                  type="email"
+                  autoCapitalize="none"
+                  autoComplete="email"
+                  autoCorrect="off"
+                  {...register("email", { required: "Email is required" })}
+                />
+                {errors.email && (
+                  <p className="text-sm mt-1 text-red-900">
+                    {errors.email.message}
+                  </p>
+                )}
+                <level className="mt-3 font-semibold text-sm " htmlFor="password">
+                  Password
+                </level>
+                <Input
+                  className="p-2 font-medium "
+                  id="password"
+                  placeholder="password"
+                  minLength={6}
+                  type="password"
+                  autoCapitalize="none"
+                  autoCorrect="off"
+                  {...register("password", { required: "Password is required" })}
+                />
+                {errors.password && (
+                  <p className="text-sm mt-1 text-red-900">
+                    {errors.password.message}
+                  </p>
+                )}
+              </div>
+              <div className="flex justify-center">
+                <Button className="mt-4 bg-indigo-500 text-white font-semibold hover:bg-indigo-600 md:min-w-[250px] h-10">
+                  Login
+                </Button>
+              </div>
             </div>
-            <Button className="mt-4 bg-sky-600 hover:bg-green-700">
-              Create Account
-            </Button>
-          </div>
-        </form>
-        <div className="flex">
-          <p className="text-sm">Create Eco-book account?</p>
-          <Link href="/" className="ml-2 text-sm underline">
-            sign up
-          </Link>
-        </div>
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 border-r-2">
-              Or continue with
-            </span>
+          </form>
+          <div className="flex items-center">
+            <p className="text-sm ">Already have an account?</p>
+            <button onClick={() => dispatch(setSignUp())}
+            className="ml-2 bg-white border-0 cursor-pointer text-blue-400 text-[16px] font-semibold underline">
+              Login
+            </button>
           </div>
         </div>
-
-        <Button
-          type="button"
-          className="flex items-center justify-center gap-1 bg-blue-600 hover:bg-blue-500"
-        >
-          <FcGoogle size={20} />
-          <p>Google</p>
-        </Button>
-      </div>
+      }
     </AuthModal>
   );
 }
