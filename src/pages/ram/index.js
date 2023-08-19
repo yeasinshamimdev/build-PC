@@ -15,7 +15,7 @@ const RamPage = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <ProductCard product={product} />
                 </Col>
               ))}

@@ -4,19 +4,19 @@ import { Col, Row } from "antd"
 import Head from "next/head"
 import Link from "next/link"
 
-const ChooseProcessor = ({products}) => {
+const ChooseGpu = ({products}) => {
   return (
-    <div className={"min-h-screen"}>
+    <div>
       <Head>
-        <title>Add Processor</title>
+        <title>Add Graphic Card</title>
       </Head>
       <div className="p-4 lg:p-0">
-        <h2 className="text-2xl lg:text-4xl mb-4 mt-16 font-semibold text-gray-900 text-center">Add Processor</h2>
-        <p className="text-gray-500 text-center ">Choose your favorite processor</p>
+        <h2 className="text-2xl lg:text-4xl mb-4 mt-16 font-semibold text-gray-900 text-center">Add Graphic Card</h2>
+        <p className="text-gray-500 text-center ">Choose your favorite Graphic Card</p>
         <div className="lg:max-w-[1200px] mx-auto py-10 lg:py-16 ">
           <Link href={"/pc-builder"} passHref className="mb-3 w-[30px] h-[30px] cursor-pointer border border-slate-400 shadow-md text-gray-600 flex items-center rounded-md">
-            <ArrowLeftLong size={24} />
-          </Link>
+              <ArrowLeftLong size={24} />
+            </Link>
           <Row className="">
               {products?.map(product => (
                 <Col key={product._id} className="gutter-row w-full "  >
@@ -31,10 +31,10 @@ const ChooseProcessor = ({products}) => {
   )
 }
 
-export default ChooseProcessor;
+export default ChooseGpu;
 
 export const getServerSideProps = async() => {
-  const res = await fetch("https://build-pc-backend.vercel.app/processor")
+  const res = await fetch("https://build-pc-backend.vercel.app/gpu")
   const data = await res.json()
   
   return {

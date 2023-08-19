@@ -42,6 +42,9 @@ const PcBuilder = () => {
           </div>
           )
         }
+        <div className="flex justify-end py-4">
+          <button className="btn btn-primary disabled:text-white " disabled>Complete Build </button>
+        </div>
       </div>
     </div>
   )

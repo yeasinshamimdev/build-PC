@@ -17,7 +17,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.products?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <ProductCard product={product} />
                 </Col>
               ))}
@@ -27,7 +27,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.processors?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'processor'} product={product} />
                 </Col>
               ))}
@@ -37,7 +37,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.motherboards?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'motherboard'} product={product} />
                 </Col>
               ))}
@@ -47,7 +47,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.ram?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'ram'} product={product} />
                 </Col>
               ))}
@@ -57,7 +57,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.gpu?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'gpu'} product={product} />
                 </Col>
               ))}
@@ -67,7 +67,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.keyboard?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'keyboard'} product={product} />
                 </Col>
               ))}
@@ -77,7 +77,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.monitor.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'monitor'} product={product} />
                 </Col>
               ))}
@@ -87,7 +87,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.mouse?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'mouse'} product={product} />
                 </Col>
               ))}
@@ -97,7 +97,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.powerSupply?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'power-supply-unit'} product={product} />
                 </Col>
               ))}
@@ -107,7 +107,7 @@ const Products = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.storage?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <OthersPageCard title={'ssd'} product={product} />
                 </Col>
               ))}
