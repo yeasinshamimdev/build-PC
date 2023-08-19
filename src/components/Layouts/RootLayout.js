@@ -25,8 +25,9 @@ const RootLayout = ({children}) => {
               </label>
             </Link>
             <ul  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Home</Link></li>
-            <li><Link href={'/product'}  className="link link-hover text-white tex-xl font-sans" >Products</Link></li>
+              <li><Link href={'/'}  className="link link-hover text-white tex-xl font-sans" >Home</Link></li>
+              <li><Link href={'/about'} className='btn btn-ghost text-white'>About</Link></li>
+              <li><Link href={'/product'}  className="link link-hover text-white tex-xl font-sans" >Products</Link></li>
               <li><Link href={'/processor'}  className="link link-hover text-white tex-xl font-sans" >Processor</Link></li>
               <li><Link href={'/motherboard'}  className="link link-hover text-white tex-xl font-sans">Motherboard</Link></li>
               <li><Link href={'/ram'}  className="link link-hover text-white tex-xl font-sans">RAM</Link></li>
@@ -53,6 +54,7 @@ const RootLayout = ({children}) => {
                 <li><Link href={'/others'}  className="no-underline hover:bg-slate-600 text-white tex-xl font-sans">Others</Link></li>
               </ul>
             </div> 
+            <Link href={'/about'} className='btn btn-ghost text-white'>About</Link>
           </div>
         </div>
         <div className="navbar-end pr-2 lg:pr-6">
@@ -103,7 +105,7 @@ const RootLayout = ({children}) => {
       <div>
         {children}
       </div>
-      <footer className="footer bg-base-200 text-base-content font-sans mt-8 lg:mt-32">
+      <footer className="footer bg-base-200 text-base-content font-sans">
         <div className='lg:p-10 pl-10 pt-10'>
           <Image src={Logo} alt='Logo' width={50} height={50} />
           <p>Yeasin Shamim<br/>A Full Stack Developer</p>

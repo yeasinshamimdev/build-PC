@@ -2,7 +2,8 @@ import ProductCard from "@/components/Common/ProductCard";
 import { Col, Row } from "antd";
 import Head from "next/head";
 
-const Motherboard = ({products}) => {
+const Motherboard = ({products }) => {
+
   return (
     <div>
       <Head>
@@ -15,7 +16,7 @@ const Motherboard = ({products}) => {
           <Row
             gutter={[48, 48]}>
               {products?.map(product => (
-                <Col key={product.id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
+                <Col key={product._id} className="gutter-row" xs={24} sm={16} md={12} lg={8} xl={8} >
                   <ProductCard product={product} />
                 </Col>
               ))}

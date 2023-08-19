@@ -1,3 +1,4 @@
+import casingImg from '@/assets/img/casingImg.png';
 import processorIcon from '@/assets/img/cpuIcon.png';
 import gpuIcon from '@/assets/img/gpuIcon.png';
 import keyboardIcon from '@/assets/img/keyboardIcon.png';
@@ -7,6 +8,7 @@ import mouseIcon from '@/assets/img/mouseIcon.png';
 import powerSupplyIcon from '@/assets/img/powerSupply.png';
 import ramIcon from '@/assets/img/ramIcon.png';
 import storageIcon from '@/assets/img/ssdIcon.png';
+casingImg
 
 export  const dynamicRoutes = [{
   id: 1,
@@ -61,4 +63,11 @@ export  const dynamicRoutes = [{
   route:'/storage',
   img: storageIcon,
   title: "Storage"
-}];
+},
+{
+  id: 10,
+  route:'/casing',
+  img: casingImg,
+  title: "Casing"
+}
+];

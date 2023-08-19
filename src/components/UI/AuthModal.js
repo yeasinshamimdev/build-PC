@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const AuthModal = ({children}) => {
   const isOpen = useSelector(state => state.modal.open);
-  const isSignUp = useSelector(state => state.modal.signup)
+  const isSignUp = useSelector(state => state.modal.signUp)
   const dispatch = useDispatch();
 
   return (
@@ -33,8 +33,8 @@ const AuthModal = ({children}) => {
 
         <div className="flex justify-center gap-4 md:gap-10 mt-4">
         <Button onClick={() => {
-          dispatch(setSignUp(false)),
-          setOpen()
+          dispatch(setOpen()),
+          dispatch(setSignUp(false))
         }}
           type="button"
           className="flex items-center w-[90%] h-10 text-white font-semibold justify-center gap-1 bg-cyan-600 hover:bg-cyan-500"
@@ -43,8 +43,8 @@ const AuthModal = ({children}) => {
             <p>Google</p>
           </Button>
             <Button  onClick={() => {
-              dispatch(setSignUp(false)),
-              setOpen()
+              dispatch(setOpen()),
+              dispatch(setSignUp(false))
             }}
               type="button"
               className="flex items-center w-[90%] h-10 text-white font-semibold justify-center gap-1 bg-slate-800 hover:bg-slate-700"

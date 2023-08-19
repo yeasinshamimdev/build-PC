@@ -1,9 +1,17 @@
-import FeaturedCategories from "@/components/UI/FeaturedCategories"
-import FeaturedProducts from "@/components/UI/FeaturedProducts"
-import HeroSection from "@/components/UI/Hero"
-import Head from "next/head"
+import Loader from "@/components/Common/Loader";
+import FeaturedCategories from "@/components/UI/FeaturedCategories";
+import FeaturedProducts from "@/components/UI/FeaturedProducts";
+import HeroSection from "@/components/UI/Hero";
+import Head from "next/head";
 
-export default function Home({products}) {
+export default function Home({products, isFallback}) {
+  if (isFallback) {
+    return (
+      <div className={"min-h-screen"}>
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <div className={'font-sans'}>
