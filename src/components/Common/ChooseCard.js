@@ -1,5 +1,6 @@
 import { removeComponent } from '@/redux/features/buildPC/buildPCSlice';
 import { chooseBuildPC } from '@/utils/chooseBuildPC';
+import { Tooltip } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
@@ -50,9 +51,15 @@ export default function ChooseCard({value, index}) {
               <span className="text-red-500 cursor-pointer" 
               onClick={() => dispatch(removeComponent(value?.componentType))}
               >
+              <Tooltip title="Remove" trigger={"hover"}>
                 <XClose size={18} />
+              </Tooltip> 
               </span>
-              <Link href={data[index].redirectPath} className="cursor-pointer text-blue-500"><Rotate size={18}/></Link>
+              <Link href={data[index].redirectPath} className="cursor-pointer text-blue-500"> 
+                <Tooltip title="Choose" trigger={"hover"}>
+                <Rotate size={18}/>
+                </Tooltip> 
+              </Link>
             </div>
             :
             <Link href={data[index].redirectPath} className="btn btn-primary my-4 md:my-0">Choose</Link>

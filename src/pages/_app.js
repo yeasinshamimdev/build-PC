@@ -4,10 +4,11 @@ import store from '@/redux/store';
 import '@/styles/globals.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { SessionProvider } from "next-auth/react";
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps: {session, ...pageProps} }) {
 
   useEffect(() => {
     AOS.init();
@@ -19,11 +20,13 @@ export default function App({ Component, pageProps }) {
   }, []);
  
   return(
-    <Provider store={store}>
-      <RootLayout>
-      <LoginForm />
-        <Component {...pageProps} />
-      </RootLayout>
-    </Provider> 
+    <SessionProvider session={session}>
+      <Provider store={store}>
+        <RootLayout>
+        <LoginForm />
+          <Component {...pageProps} />
+        </RootLayout>
+      </Provider> 
+    </SessionProvider>
   )
 }

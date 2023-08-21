@@ -8,7 +8,7 @@ import Image from 'next/image'
 const SingleRamPage = ({product}) => {
   
   return (
-    <div className={"min-h-screen"}>
+    <div className={"min-h-screen "}>
       <Head>
         <title>{product?.productName}</title>
       </Head>

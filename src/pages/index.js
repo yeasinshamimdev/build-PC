@@ -14,7 +14,7 @@ export default function Home({products, isFallback}) {
   }
 
   return (
-    <div className={'font-sans'}>
+    <div className={'font-sans scroll-smooth'}>
       <Head>
         <title>Shamim Tech </title>
         <meta property="og:title" content="Shamim's tech" key="tech" />

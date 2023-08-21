@@ -15,7 +15,6 @@ export default function LoginForm() {
   } = useForm();
   const isOpen = useSelector(state => state.modal.open)
   const isSignUp = useSelector(state => state.modal.signUp)
-  // console.log(isSignUp)
   const dispatch = useDispatch();
   
   const onSubmit = (data) => {

@@ -1,15 +1,15 @@
 import Logo from '@/assets/img/logo.png';
-import { setOpen } from '@/redux/features/modal/modalSlice';
+import { setOpen, setSignUp } from '@/redux/features/modal/modalSlice';
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 const RootLayout = ({children}) => {
-  let user = false;
-  const isOpen = useSelector(state => state.modal.open)
-  // console.log(isOpen)
-  const dispatch = useDispatch()
+  const isOpen = useSelector(state => state.modal.open);
+  const dispatch = useDispatch();
+  const { data: session } = useSession();
   
   return (
     <div>
@@ -78,10 +78,10 @@ const RootLayout = ({children}) => {
               </div>
             </div>
             {
-              user ? <div className="dropdown dropdown-end">
+              session?.user ? <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <Image src={user} width={100} height={100} responsive="true" alt='user image' />
+                  <Image src={session?.user?.image} width={100} height={100} responsive="true" alt='user image' />
                 </div>
               </label>
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -91,13 +91,19 @@ const RootLayout = ({children}) => {
                   </Link>
                 </li>
                 <li><Link href={"/"} className="no-underline text-white hover:bg-slate-600">Settings</Link></li>
-                <li><Link href={"/"} className="no-underline text-white hover:bg-slate-600">Logout</Link></li>
+                <li onClick={() => signOut()}><Link href={"/"} className="no-underline text-white hover:bg-slate-600">Logout</Link></li>
               </ul>
             </div>  
             : 
-            <button className="btn mr-3 btn-sm lg:btn-md mt-2 md:mt-0 btn-ghost px-4 py-0 bg-gradient-to-r from-indigo-500 to-blue-600 text-white hover:bg-gradient-to-l hover:from-blue-600 hover:to-indigo-500" onClick={() => dispatch(setOpen())}>
+            <button 
+              className="btn mr-3 btn-sm lg:btn-md mt-2 md:mt-0 btn-ghost px-4 py-0 bg-gradient-to-r from-indigo-500 to-blue-600 text-white hover:bg-gradient-to-l hover:from-blue-600 hover:to-indigo-500" 
+              onClick={() => {
+                dispatch(setOpen()),
+                dispatch(setSignUp(false))
+              }}
+              >
               Login
-            </button>             
+            </button>
             }
           </div>
         </div>
