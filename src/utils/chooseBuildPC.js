@@ -35,24 +35,6 @@ export const chooseBuildPC = [
     required: true,
   },
   {
-    image: Keyboard,
-    title: "Keyboard",
-    redirectPath: "/pc-builder/choose/keyboard",
-    required: true,
-  },
-  {
-    image: Monitor,
-    title: "Monitor",
-    redirectPath: "/pc-builder/choose/monitor",
-    required: true,
-  },
-  {
-    image: Mouse,
-    title: "Mouse",
-    redirectPath: "/pc-builder/choose/mouse",
-    required: true,
-  },
-  {
     image: PowerSupply,
     title: "Power Supply",
     redirectPath: "/pc-builder/choose/power-supply",
@@ -62,6 +44,24 @@ export const chooseBuildPC = [
     image: Sdd,
     title: "Storage",
     redirectPath: "/pc-builder/choose/storage",
+    required: true,
+  },
+  {
+    image: Monitor,
+    title: "Monitor",
+    redirectPath: "/pc-builder/choose/monitor",
+    required: true,
+  },
+  {
+    image: Keyboard,
+    title: "Keyboard",
+    redirectPath: "/pc-builder/choose/keyboard",
+    required: true,
+  },
+  {
+    image: Mouse,
+    title: "Mouse",
+    redirectPath: "/pc-builder/choose/mouse",
     required: true,
   },
   {

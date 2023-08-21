@@ -24,7 +24,7 @@ export const buildPCSlice = createSlice({
     },
     removeComponent: (state, action) => {
       const componentType = action.payload;
-      state[componentType] = {};
+      state[componentType] = null;
     },
   }
 })

@@ -1,9 +1,16 @@
 import { setComponent } from "@/redux/features/buildPC/buildPCSlice";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
 const AddCard = ({product}) => {
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleAddToBuilder = () => {
+    dispatch(setComponent({ componentType: product.componentType, payload: product }))
+    router.back();
+  }
   
   return (
     <div className="mb-16 md:mb-6" >
@@ -20,7 +27,7 @@ const AddCard = ({product}) => {
         </div>
         <div className="flex flex-col justify-center items-center mt-6 md:mt-0">
           <p className="text-[16px] font-medium m-0 mb-2">${product?.price}</p>
-          <button onClick={() => dispatch(setComponent({ componentType: product.componentType, payload: product }))} className="btn btn-primary">Add To Builder</button>
+          <button onClick={handleAddToBuilder} className="btn btn-primary">Add To Builder</button>
         </div>
       </div>
     </div>

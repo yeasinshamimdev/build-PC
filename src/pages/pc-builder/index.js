@@ -1,14 +1,21 @@
+import ChooseCard from "@/components/Common/ChooseCard";
 import RootLayout from "@/components/Layouts/RootLayout";
-import { chooseBuildPC } from "@/utils/chooseBuildPC";
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import { useSelector } from "react-redux";
 
 const PcBuilder = () => {
+  const processorData = useSelector((state) => state.buildPC.processor);
+  const motherboardData = useSelector((state) => state.buildPC.motherboard);
+  const ramData = useSelector((state) => state.buildPC.ram);
+  const gpuData = useSelector((state) => state.buildPC.gpu);
+  const powerSupplyData = useSelector((state) => state.buildPC.powerSupply);
+  const ssdData = useSelector((state) => state.buildPC.ssd);
+  const monitorData = useSelector((state) => state.buildPC.monitor);
+  const keyboardData = useSelector((state) => state.buildPC.keyboard);
+  const mouseData = useSelector((state) => state.buildPC.mouse);
+  const casingData = useSelector((state) => state.buildPC.casing);
 
-  const data = chooseBuildPC;
-  const storeData = useSelector((state) => state.buildPC)
+  const disabledBtn = processorData && monitorData && ramData && gpuData && powerSupplyData && ssdData && keyboardData && casingData && monitorData && monitorData === true ? true : false;
 
   return (
     <div className='min-h-screen text-black mx-auto max-w-[1280px]'>
@@ -19,35 +26,38 @@ const PcBuilder = () => {
       <div className="border border-blue-200 shadow rounded-md mt-8 lg:mt-16 px-4 lg:px-10 mb-12">
         <h1 className="text-3xl font-bold text-center mb-10">Build Your Dream PC</h1>
         {
-          data.map((el, index) =>
-          <div className="mb-4" key={index}>
-            <div className="bg-slate-200 h-[2px] w-full"></div>
-            <div className="flex justify-between items-center h-24">
-              <div className="flex gap-3 md:gap-6 justify-center">
-                <Image src={el.image} 
-                alt="Image" 
-                height={50} width={50} />
-                <div className="">
-                  <div className="flex">
-                    <h2 className={`text-sm mt-2 font-bold m-0`}>{el.title}</h2>
-                    <p className="text-sm m-0 mt-2 text-red-500">{el?.required && " *"}</p>
-                  </div>
-                  <div className="md:grid gap-6 animate-pulse mt-4 w-[150px] hidden">
-                    <div className="h-2 bg-slate-300 rounded col-span-1"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="md:grid gap-6 animate-pulse w-[200px] hidden">
-                <div className="h-2 bg-slate-300 rounded col-span-1"></div>
-                <div className="h-2 bg-slate-300 rounded col-span-1"></div>
-              </div>
-              <Link href={el.redirectPath} className="btn btn-primary">Choose</Link>
-            </div>
-          </div>
-          )
+          processorData ? <ChooseCard value={processorData} index={0} /> : <ChooseCard value={processorData} index={0} />
         }
+        {
+          motherboardData ? <ChooseCard value={motherboardData} index={1} /> : <ChooseCard value={motherboardData} index={1} />
+        }
+        {
+          ramData ? <ChooseCard value={ramData} index={2} /> : <ChooseCard value={ramData} index={2} />
+        }
+        {
+          gpuData ? <ChooseCard value={gpuData} index={3} /> : <ChooseCard value={gpuData} index={3} />
+        }
+        {
+          powerSupplyData? <ChooseCard value={powerSupplyData} index={4} /> : <ChooseCard value={powerSupplyData} index={4} />
+        }
+        {
+          ssdData? <ChooseCard value={ssdData} index={5} /> : <ChooseCard value={ssdData} index={5} />
+        }
+        {
+          monitorData? <ChooseCard value={monitorData} index={6} /> : <ChooseCard value={monitorData} index={6} />
+        }
+        {
+          keyboardData? <ChooseCard value={keyboardData} index={7} /> : <ChooseCard value={keyboardData} index={7} />
+        }
+        {
+          mouseData? <ChooseCard value={mouseData} index={8} /> : <ChooseCard value={mouseData} index={8} />
+        }
+        {
+          casingData? <ChooseCard value={casingData} index={9} /> : <ChooseCard value={casingData} index={9} />
+        }
+
         <div className="flex justify-end py-4">
-          <button className="btn btn-primary disabled:text-white " disabled>Complete Build </button>
+          <button className="btn btn-primary disabled:text-white" disabled={disabledBtn} >Complete Build </button>
         </div>
       </div>
     </div>
