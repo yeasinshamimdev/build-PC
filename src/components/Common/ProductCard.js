@@ -11,6 +11,7 @@ const ProductCard = ({product}) => {
     <Card
       hoverable
       style={{ width: "auto" }}
+      data-aos="zoom-in-up" data-aos-duration="1500"
       >
       <Image width={100}  height={200} responsive="true" alt="products" className="p-2 w-auto mx-auto"  src={product?.image} />
       <p className='text-[17px] mt-0 mb-4 font-bold'><b></b>{product?.productName}</p>

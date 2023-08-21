@@ -9,60 +9,63 @@ import PowerSupply from "@/assets/img/powerSupply.png";
 import Ram from "@/assets/img/ramIcon.png";
 import Sdd from "@/assets/img/ssdIcon.png";
 
-
 export const chooseBuildPC = [
   {
-    img: CPUIcon,
+    image: CPUIcon,
     title: "Processor",
     redirectPath: "/pc-builder/choose/processor",
     required: true,
   },
   {
-    img: MotherboardIcon,
+    image: MotherboardIcon,
     title: "Motherboard",
     redirectPath: "/pc-builder/choose/motherboard",
     required: true,
   },
   {
-    img: Ram,
+    image: Ram,
     title: "RAM",
     redirectPath: "/pc-builder/choose/ram",
     required: true,
   },
   {
-    img: Gpu,
+    image: Gpu,
     title: "Graphics Card",
-    redirectPath: "/pc-builder/choose/gpu"
+    redirectPath: "/pc-builder/choose/gpu",
+    required: true,
   },
   {
-    img: Keyboard,
+    image: Keyboard,
     title: "Keyboard",
     redirectPath: "/pc-builder/choose/keyboard",
+    required: true,
   },
   {
-    img: Monitor,
+    image: Monitor,
     title: "Monitor",
     redirectPath: "/pc-builder/choose/monitor",
+    required: true,
   },
   {
-    img: Mouse,
+    image: Mouse,
     title: "Mouse",
     redirectPath: "/pc-builder/choose/mouse",
+    required: true,
   },
   {
-    img: PowerSupply,
+    image: PowerSupply,
     title: "Power Supply",
     redirectPath: "/pc-builder/choose/power-supply",
     required: true,
   },
   {
-    img: Sdd,
+    image: Sdd,
     title: "Storage",
     redirectPath: "/pc-builder/choose/storage",
     required: true,
   },
   {
-    img: Casing,
+    image: Casing,
     title: "Casing",
     redirectPath: "/pc-builder/choose/casing",
     required: true,
