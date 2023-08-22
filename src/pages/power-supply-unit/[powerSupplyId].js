@@ -56,9 +56,21 @@ const SinglePowerSupplyPage = ({product}) => {
 
 export default SinglePowerSupplyPage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
-  const res = await fetch(`https://build-pc-backend.vercel.app/power-supply-unit/${params.powerSupplyId}`)
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/power-supply-unit")
+  const data = await res.json();
+  const paths = data.data.map((powerSupply) => ({
+    params: {powerSupplyId: powerSupply._id}
+  }))
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = async({params}) => {
+  const {powerSupplyId} = params;
+  const res = await fetch(`https://build-pc-backend.vercel.app/power-supply-unit/${powerSupplyId}`)
   const data = await res.json()
   
   return {

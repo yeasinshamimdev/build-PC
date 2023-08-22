@@ -132,8 +132,6 @@ export const getStaticProps = async() => {
   const powerSupply = await fetch("https://build-pc-backend.vercel.app/power-supply-unit").then((res)=> res.json());
   const storage = await fetch("https://build-pc-backend.vercel.app/ssd").then((res)=> res.json());
 
-
-
   return {
     props: {
       products: {

@@ -1,10 +1,20 @@
 ## Live Site
 
-[]()
+[https://build-pc-lovat.vercel.app](https://build-pc-lovat.vercel.app)
 
 ## Getting Started
 
-First, run the development server:
+First, need to install packages:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Second, run the development server:
 
 ```bash
 npm run dev
@@ -14,8 +24,12 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### What we are able to do here
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- In this app you can login with github and google.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+* You can logout from here.
+
+- You can Build your dream PC.
+- You can see any processor, motherboard, gpu, monitor, etc details and get idea from them.
+- You can choose any products from the list.

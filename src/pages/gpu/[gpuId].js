@@ -61,10 +61,22 @@ const GpuPage = ({product}) => {
 
 export default GpuPage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
 
-  const res = await fetch(`https://build-pc-backend.vercel.app/gpu/${params.gpuId}`)
+export const getStaticPaths = async () => {
+  const res = await fetch(`https://build-pc-backend.vercel.app/gpu`);
+  const data = await res.json();
+
+  const paths = data.data.map((gpu) => ({
+    params: {gpuId: gpu._id}
+  }))
+
+  return {paths, fallback: false}
+}
+
+export const getStaticProps = async({params}) => {
+  const { gpuId } = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/gpu/${gpuId}`)
   const data = await res.json()
   
   return {

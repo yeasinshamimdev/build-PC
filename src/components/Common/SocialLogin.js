@@ -15,7 +15,7 @@ const SocialLogin = () => {
         <div className="flex justify-center gap-4 md:gap-10 mt-4">
           <Button onClick={() => {
             signIn("google", {
-              callbackUrl: "http://localhost:3000/pc-builder"
+              callbackUrl: "https://build-pc-lovat.vercel.app/pc-builder"
             })
           }}
           type="button"
@@ -25,7 +25,7 @@ const SocialLogin = () => {
           </Button>
           <Button  onClick={() => {
             signIn("github", {
-              callbackUrl: "http://localhost:3000/pc-builder"
+              callbackUrl: "https://build-pc-lovat.vercel.app/pc-builder"
             })
           }}
             type="button"

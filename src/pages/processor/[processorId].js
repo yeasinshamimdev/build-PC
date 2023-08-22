@@ -57,9 +57,23 @@ const SingleProcessor = ({product}) => {
 
 export default SingleProcessor;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
-  const res = await fetch(`https://build-pc-backend.vercel.app/processor/${params.processorId}`)
+
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/processor")
+  const data = await res.json();
+  const paths = data.data.map((processor) => ({
+    params: {processorId: processor._id}
+  }))
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = async({params}) => {
+  const {processorId} = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/processor/${processorId}`)
   const data = await res.json()
   
   return {

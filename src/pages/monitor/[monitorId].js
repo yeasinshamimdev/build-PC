@@ -59,10 +59,25 @@ const SingleMonitorPage = ({product}) => {
 
 export default SingleMonitorPage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/monitor")
+  const data = await res.json();
 
-  const res = await fetch(`https://build-pc-backend.vercel.app/monitor/${params.monitorId}`)
+  const paths = data.data.map((monitor) => ({
+    params: {monitorId: monitor._id}
+  }))
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+
+export const getStaticProps = async({params}) => {
+  const { monitorId } = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/monitor/${monitorId}`)
   const data = await res.json()
   
   return {

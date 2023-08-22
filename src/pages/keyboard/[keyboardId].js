@@ -59,10 +59,24 @@ const KeyboardPage = ({product}) => {
 
 export default KeyboardPage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/keyboard")
+  const data = await res.json();
 
-  const res = await fetch(`https://build-pc-backend.vercel.app/keyboard/${params.keyboardId}`)
+  const paths = data.data.map((keyboard) => ({
+    params: { keyboardId: keyboard._id }
+  }))
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = async({params}) => {
+  const {keyboardId} = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/keyboard/${keyboardId}`)
   const data = await res.json()
   
   return {

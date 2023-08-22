@@ -56,10 +56,22 @@ const SingleMousePage = ({product}) => {
 
 export default SingleMousePage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/mouse")
+  const data = await res.json();
+  const paths = data.data.map((mouse) => ({
+    params: {mouseId: mouse._id}
+  }))
+  return {
+    paths,
+    fallback: false
+  }
+}
 
-  const res = await fetch(`https://build-pc-backend.vercel.app/mouse/${params.mouseId}`)
+export const getStaticProps = async({params}) => {
+  const {mouseId} = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/mouse/${mouseId}`)
   const data = await res.json()
   
   return {

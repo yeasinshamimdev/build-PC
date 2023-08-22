@@ -56,9 +56,22 @@ const SingleStoragePage = ({product}) => {
 export default SingleStoragePage;
 
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
-  const res = await fetch(`https://build-pc-backend.vercel.app/ssd/${params.storageId}`)
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/ssd")
+  const data = await res.json();
+  const paths = data.data.map((storage) => ({
+    params: {storageId: storage._id}
+  }))
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = async({params}) => {
+  const {storageId} = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/ssd/${storageId}`)
   const data = await res.json()
   
   return {

@@ -58,10 +58,23 @@ const ProductDetailsPage = ({product}) => {
 
 export default ProductDetailsPage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
 
-  const res = await fetch(`https://build-pc-backend.vercel.app/product/${params.productId}`)
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/products")
+  const data = await res.json();
+  const paths = data.data.map((product) => ({
+    params: {productId: product._id}
+  }))
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = async({params}) => {
+  const {productId} = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/product/${productId}`)
   const data = await res.json()
   
   return {

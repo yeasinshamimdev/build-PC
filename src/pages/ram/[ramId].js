@@ -57,9 +57,23 @@ const SingleRamPage = ({product}) => {
 
 export default SingleRamPage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
-  const res = await fetch(`https://build-pc-backend.vercel.app/ram/${params.ramId}`)
+
+export const getStaticPaths = async () => {
+  const res = await fetch("https://build-pc-backend.vercel.app/ram")
+  const data = await res.json();
+  const paths = data.data.map((ram) => ({
+    params: {ramId: ram._id}
+  }))
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export const getStaticProps = async({params}) => {
+  const {ramId} = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/ram/${ramId}`)
   const data = await res.json()
   
   return {
