@@ -28,7 +28,7 @@ const ProcessorPage = ({products}) => {
 
 export default ProcessorPage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/processor")
   const data = await res.json()
   

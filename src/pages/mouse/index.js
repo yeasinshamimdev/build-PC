@@ -28,7 +28,7 @@ const MousePage = ({products}) => {
 
 export default MousePage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/mouse")
   const data = await res.json()
   

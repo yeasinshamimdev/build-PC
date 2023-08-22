@@ -29,7 +29,7 @@ const KeyboardPage = ({products}) => {
 
 export default KeyboardPage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/keyboard")
   const data = await res.json()
   

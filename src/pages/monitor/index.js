@@ -28,7 +28,7 @@ const MonitorPage = ({products}) => {
 
 export default MonitorPage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/monitor")
   const data = await res.json()
   

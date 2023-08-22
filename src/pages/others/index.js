@@ -3,8 +3,7 @@ import { Col, Row } from "antd";
 import Head from "next/head";
 
 const OthersPage = ({products}) => {
-  console.log(products);
-  const {mouseData, keyboardData, gpuData} = products;
+  const {mouseData, keyboardData, gpuData, casingData} = products;
 
   return (
     <div className={"min-h-screen"}>
@@ -42,6 +41,15 @@ const OthersPage = ({products}) => {
                   </Col>
                 ))}
             </Row>
+            <h2 className="text-2xl lg:text-3xl my-16 font-semibold text-gray-900 text-center">Casing</h2>
+            <Row
+              gutter={[48, 48]}>
+                {casingData?.map(product => (
+                  <Col key={product._id} className="gutter-row mb-20" xs={24} sm={16} md={12} lg={8} xl={8} >
+                    <OthersPageCard title={'Casing'} product={product} />
+                  </Col>
+                ))}
+            </Row>
         </div>
       </div>
     </div>
@@ -50,18 +58,19 @@ const OthersPage = ({products}) => {
 
 export default OthersPage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const mouseData = await fetch("https://build-pc-backend.vercel.app/mouse").then((res) => res.json());
   const keyboardData = await fetch("https://build-pc-backend.vercel.app/keyboard").then((res) => res.json());
   const gpuData = await fetch("https://build-pc-backend.vercel.app/gpu").then((res) => res.json());
-  
+  const casingData = await fetch("https://build-pc-backend.vercel.app/casing").then((res) => res.json());
   
   return {
     props: {
       products: {
         mouseData: mouseData.data,
         keyboardData: keyboardData.data,
-        gpuData: gpuData.data
+        gpuData: gpuData.data,
+        casingData: casingData.data
       }
     }
   }

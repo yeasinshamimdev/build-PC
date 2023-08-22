@@ -5,8 +5,7 @@ import { Col, Row } from "antd"
 import Head from "next/head"
 import Image from "next/image"
 
-const SingleMonitorPage = ({product}) => {
-  console.log(product)
+const SingleCasingPage = ({product}) => {
   
   return (
     <div className="min-h-screen">
@@ -54,12 +53,24 @@ const SingleMonitorPage = ({product}) => {
   )
 }
 
-export default SingleMonitorPage;
+export default SingleCasingPage;
 
-export const getServerSideProps = async(context) => {
-  const {params} = context;
 
-  const res = await fetch(`https://build-pc-backend.vercel.app/casing/${params.casingId}`)
+export const getStaticPaths = async () => {
+  const res = await fetch(`https://build-pc-backend.vercel.app/casing`);
+  const data = await res.json();
+
+  const paths = data.data.map((casing) => ({
+    params: {casingId: casing._id}
+  }))
+
+  return {paths, fallback: false}
+}
+
+export const getStaticProps = async({params}) => {
+  const { casingId } = params;
+
+  const res = await fetch(`https://build-pc-backend.vercel.app/casing/${casingId}`)
   const data = await res.json()
   
   return {

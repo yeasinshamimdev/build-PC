@@ -28,7 +28,7 @@ const PowerSupplyPage = ({products}) => {
 
 export default PowerSupplyPage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/power-supply-unit")
   const data = await res.json()
   

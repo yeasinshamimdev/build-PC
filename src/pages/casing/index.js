@@ -28,7 +28,7 @@ const CasingPage = ({products}) => {
 
 export default CasingPage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/casing")
   const data = await res.json()
   

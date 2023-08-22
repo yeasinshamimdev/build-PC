@@ -120,7 +120,7 @@ const Products = ({products}) => {
 
 export default Products;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const products = await fetch("https://build-pc-backend.vercel.app/products").then((res)=> res.json());
   const processors = await fetch("https://build-pc-backend.vercel.app/processor").then((res)=> res.json());
   const motherboards = await fetch("https://build-pc-backend.vercel.app/motherboard").then((res)=> res.json());

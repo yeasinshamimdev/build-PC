@@ -29,7 +29,7 @@ const Motherboard = ({products }) => {
 
 export default Motherboard;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/motherboard")
   const data = await res.json()
   

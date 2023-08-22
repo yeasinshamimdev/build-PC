@@ -31,7 +31,7 @@ const GraphicsCardPage = ({products}) => {
 export default GraphicsCardPage;
 
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/gpu")
   const data = await res.json()
   

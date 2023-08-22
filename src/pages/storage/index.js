@@ -28,7 +28,7 @@ const StoragePage = ({products}) => {
 
 export default StoragePage;
 
-export const getServerSideProps = async() => {
+export const getStaticProps = async() => {
   const res = await fetch("https://build-pc-backend.vercel.app/ssd")
   const data = await res.json()
   
